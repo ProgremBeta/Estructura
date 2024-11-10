@@ -9,7 +9,7 @@ import time
 import psutil
 from insertionSort import insertionShort
 from BusquedaBinaria import BusquedaBinaria
-from TimSort_Personas import TimSort
+#from TimSort_Personas import TimSort
 
 # Definimos la clase Persona con los atributos correspondientes
 class Persona:

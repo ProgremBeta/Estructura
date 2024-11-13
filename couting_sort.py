@@ -1,19 +1,21 @@
-def counting_sort(personas):
-    max_documento = max(persona.numero_documento for persona in personas)
-    min_documento = min(persona.numero_documento for persona in personas)
-    rango = max_documento - min_documento + 1
-    count = [0] * rango
-    output = [None] * len(personas)
+def counting_sort_personas(lista_personas):
+    max_prioridad = max(persona.prioridad for persona in lista_personas)
+    count = [0] * (max_prioridad + 1)
     
-    for persona in personas:
-        count[persona.numero_documento - min_documento] += 1
-        
+    for persona in lista_personas:
+        count[persona.prioridad] += 1
+    
     for i in range(1, len(count)):
         count[i] += count[i - 1]
-
-    for persona in reversed(personas):
-        index = count[persona.numero_documento - min_documento] - 1
+    
+    output = [None] * len(lista_personas)
+    
+    for persona in reversed(lista_personas):
+        index = count[persona.prioridad] - 1
         output[index] = persona
-        count[persona.numero_documento - min_documento] -= 1
-
-    return output
+        count[persona.prioridad] -= 1
+    
+    for i in range(len(lista_personas)):
+        lista_personas[i] = output[i]
+    
+    return lista_personas

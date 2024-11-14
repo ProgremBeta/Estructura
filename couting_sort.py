@@ -1,4 +1,4 @@
-def counting_sort_personas(lista_personas):
+def counting_sort(lista_personas):
     max_prioridad = max(persona.prioridad for persona in lista_personas)
     count = [0] * (max_prioridad + 1)
     

@@ -1,4 +1,4 @@
-def insertionShort(arr):
+def insertionSort(arr):
     for j in range(1, len(arr)):
         actual = arr[j]
         i = j - 1

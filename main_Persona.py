@@ -7,7 +7,7 @@ Created on Fri Nov  1 20:00:31 2024
 import pandas as pd
 import time
 from memory_profiler import profile
-from insertionSort import insertionShort
+from insertionSort import insertionSort
 from BusquedaBinaria import BusquedaBinaria
 from BusquedaInterpolacion import BusquedaInterpolacion
 from couting_sort import counting_sort
@@ -47,9 +47,9 @@ lista_personas = [
 
 @profile
 def ordenar_personas():
-    inicio = time.time()r
+    inicio = time.time()
 
-    personas_ordenadas = insertionShort(lista_personas)
+    personas_ordenadas = insertionSort(lista_personas)
 
     fin = time.time()
     tiempo_total = fin - inicio 
